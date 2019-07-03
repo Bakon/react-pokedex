@@ -1,6 +1,3 @@
-$background: #61dafb
-
-
 *
   box-sizing: border-box
 
@@ -13,11 +10,40 @@ h1, h2, h3, h4, p
 
 .container
   height: 100vh
-  background-color: $background
+  display: flex
+  flex-flow: column wrap
+  align-content: center
+
+
+.header
+  background-color: #ed1e24
+  width: 100vw
+  position: fixed
+  top: 0
+  display: flex
+  flex-flow: row wrap
+  justify-content: flex-start
+  align-items: center
+  z-index: 1000
+  & a:first-of-type
+    color: white
+    text-decoration: none
+    padding: .5rem
+
+.main
+  display: flex
+  flex-flow: column wrap
+  margin-top: 4rem
+
+.pokemonCard
   display: flex
   flex-flow: column wrap
   justify-content: center
-  align-content: center
+  align-items: center
+  background-color: #eee
+  border-radius: .3rem
 
-  & button
-  	height: 1.5rem
+  .pokemonName
+
+  .pokemonSprite
+    max-width: 100%
