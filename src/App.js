@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment as F} from 'react';
+import './styles/app.sass';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class Pokedex extends React.Component {
+  state = {
+    pokemon: {}
+  };
+
+  componentDidMount() {
+    const getAllPokemons = 'https://pokeapi.co/api/v2/pokemon/?limit=964';  
+
+    fetch(getAllPokemons)
+      .then(res => res.json())
+      .then(data => this.setState({ pokemons: data }))
+
+    console.log(this.state.pokemon);
+  };
+
+
+  render() {
+    return (
+      <div className="container">
+        <h1>Pokedex</h1>
+      </div>
+    );
+  }
 }
-
-export default App;
