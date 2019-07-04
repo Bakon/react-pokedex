@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 import PokemonCard from './PokemonCard';
 
 
 export default class PokemonList extends React.Component { 
   state = {
-    url: 'https://pokeapi.co/api/v2/pokemon/?limit=964',
+    url: 'https://pokeapi.co/api/v2/pokemon/',
     pokemon: null // reserve value for fetch result
   };
 
@@ -19,9 +19,9 @@ export default class PokemonList extends React.Component {
     const {pokemon} = this.state;
 
     return (
-      <React.Fragment>
+      <Fragment>
         {pokemon ? 
-          <React.Fragment>
+          <Fragment>
             {pokemon.map(pokemon => (
               <PokemonCard 
                 key={pokemon.name}
@@ -29,9 +29,9 @@ export default class PokemonList extends React.Component {
                 url={pokemon.url}
               />
             ))}
-          </React.Fragment>
+          </Fragment>
         : <h2>Loading</h2>}
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

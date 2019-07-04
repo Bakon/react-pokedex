@@ -22,13 +22,18 @@ h1, h2, h3, h4, p
   top: 0
   display: flex
   flex-flow: row wrap
-  justify-content: flex-start
+  justify-content: space-between
   align-items: center
   z-index: 1000
+  padding-right: 1rem
   & a:first-of-type
     color: white
     text-decoration: none
+    font-size: 1.5rem
     padding: .5rem
+  & input
+    margin: .75rem
+    padding: .25rem
 
 .main
   display: flex
@@ -42,8 +47,15 @@ h1, h2, h3, h4, p
   align-items: center
   background-color: #eee
   border-radius: .3rem
+  margin: 1rem
 
   .pokemonName
+    margin: .5rem
+
+
+  & h2::first-letter
+    text-transform: capitalize
+
 
   .pokemonSprite
     max-width: 100%

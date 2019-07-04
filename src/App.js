@@ -2,8 +2,8 @@ import React from 'react';
 import './styles/App.sass';
 
 import Header from './components/layout/Header';
-// import PokemonCard from './components/pokemon/PokemonCard';
 import PokemonList from './components/pokemon/PokemonList';
+// import PokemonCard from './components/pokemon/PokemonCard';
 
 export default class Pokedex extends React.Component {
   render() {
