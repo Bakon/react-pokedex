@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 import Pokemon from './Pokemon'
 
@@ -14,7 +14,7 @@ export default class PokemonCard extends React.Component {
     fetch(`https://pokeapi.co/api/v2/pokemon/${this.state.index}`)
       .then(res => res.json())
       .then(data => this.setState(prevState => ({
-        types: [...prevState.types, data['types']]
+        types: [...prevState.types, data.types]
       })))
     };
 
@@ -32,10 +32,18 @@ export default class PokemonCard extends React.Component {
             <h2>{index.padStart(3, '00')}</h2>
           </div>
         </div>
-        <Pokemon 
-          key={index} 
-          
-        />
+        {types ?
+          <Fragment>
+            {types.map(type => (
+              <Pokemon 
+                key={index} 
+                name={name}
+                types={types}
+                imageUrl={imageUrl}
+              />
+            ))}
+          </Fragment>
+        : <span>Loading</span>}
         <div className="pokemonCardBot">
           <div className="pokemonSprite">
             <img src={imageUrl} alt={name +'sprite'} />

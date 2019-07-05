@@ -12,7 +12,7 @@ export default class PokemonList extends React.Component {
   async componentDidMount() {
     fetch(this.state.url)
       .then(res => res.json())
-      .then(data => this.setState({ pokemon: data['results'] }))
+      .then(data => this.setState({ pokemon: data.results }))
   };
 
   render() {
