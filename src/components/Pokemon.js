@@ -1,36 +1,29 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 
-export default class Pokemon extends React.Component { 
-  state = {
-    name: this.props.name,
-    pokemonIndex: this.props.index,
-    imageUrl: this.props.imageUrl,
-    types: this.props.types
-  };
 
-  // async componentDidMount() {
-  //   fetch(`https://pokeapi.co/api/v2/pokemon/${this.props.index}`)
-  //   .then(res => res.json)
-  //   .then(data => console.log(this.props.index))
-  // };
+export default function({index, name, types, onClick}) {
+  const image = `http://cursist38.reacollege.eu/sprites/${index}.png`;
 
-  render() {
-    const {name, pokemonIndex, imageUrl, types} = this.state;
-    // console.log(types[0][0].type.name)
-    console.log(types[0][0].type.name);
-
-    return (
-      <div className="details">
-        {types ?
-          <Fragment>
-            {types.forEach(array => (
-             array.map(type => (
-                <span>{type}</span>
-              ))
-            ))}
-          </Fragment>
-        : <span>Loading</span>}
+  return ( 
+    <div onClick={onClick} className="pokemonCard">
+      <div className="pokemonCardTop">
+        <div className="pokemonName">
+         <h2>#{index.padStart(3, '00')} {name}</h2>
+        </div>
+        <div className="typing">
+          {types.map(({slot, type: {name}}) => (
+            <span key={name}>{name}</span>
+          ))}
+        </div>
+       <div className="pokemonIndex">
+          <h2>{}</h2>
+        </div>
       </div>
-    );
-  }
-}
+      <div className="pokemonCardBot">
+        <div className="pokemonSprite">
+          <img src={image} alt={name +'sprite'} />
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/App.sass';
 
 import PokemonList from './components/PokemonList';
+// PokemonList is responsible for fetching all the data and formatting it
 
 export default class Pokedex extends React.Component {
   render() {
@@ -16,6 +17,5 @@ export default class Pokedex extends React.Component {
         </div>
       </div>
     );
-  }
-}
-
+  };
+};

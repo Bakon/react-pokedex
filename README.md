@@ -1,16 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Pokedex made with React.
+Highlights clicked Pokemon and displays stats on the right.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
-
+### `npm run develop`
 Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.<br>
+This will also run a small proxy on [http://localhost:1337](http://localhost:1337) to cache PokeApi calls.
 
 ### `npm test`
 
@@ -38,6 +36,8 @@ Instead, it will copy all the configuration files and the transitive dependencie
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br>
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
