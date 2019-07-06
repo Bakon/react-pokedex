@@ -1,25 +1,21 @@
 import React from 'react';
 
-
 export default function({index, name, types, onClick}) {
   const image = `http://cursist38.reacollege.eu/sprites/${index}.png`;
 
   return ( 
     <div onClick={onClick} className="pokemonCard">
       <div className="pokemonCardTop">
-        <div className="pokemonName">
-         <h2>#{index.padStart(3, '00')} {name}</h2>
-        </div>
-        <div className="typing">
-          {types.map(({slot, type: {name}}) => (
-            <span key={name}>{name}</span>
-          ))}
-        </div>
-       <div className="pokemonIndex">
-          <h2>{}</h2>
-        </div>
+        <h3>#{index.padStart(3, '00')}</h3>
+        <h3>{name}</h3>
       </div>
       <div className="pokemonCardBot">
+        <div className="typing">
+          {types.map(({slot, type: {name}}) => (
+            <span className={name} key={name}>
+            </span>
+          ))}
+        </div>
         <div className="pokemonSprite">
           <img src={image} alt={name +'sprite'} />
         </div>

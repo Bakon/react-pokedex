@@ -1,5 +1,4 @@
 import React, {Fragment} from 'react';
-
 import Pokemon from './Pokemon';
 import PokemonHighlighter from './PokemonHighlighter';
 
@@ -7,11 +6,15 @@ const apiHost = process.env.NODE_ENV === 'development'
   ? 'http://localhost:1337'
   : 'https://pokeapi.co';
 
+const limit = process.env.NODE_ENV === 'development'
+  ? '/?limit=251'
+  : '/';
+
 export default class PokemonList extends React.Component { 
   state = {
     pokemon: null,
     currentPokemon: null,
-    url: `${apiHost}/api/v2/pokemon/?limit=25`,
+    url: `${apiHost}/api/v2/pokemon${limit}`,
   };
 
   componentDidMount() {
@@ -30,7 +33,6 @@ export default class PokemonList extends React.Component {
 
   render() {
     const {pokemon: allPokemon, currentPokemon} = this.state;
-    console.log(currentPokemon);
 
     return (
       <Fragment>

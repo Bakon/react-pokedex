@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/App.sass';
+import './styles/PokemonTyping.sass';
 
 import PokemonList from './components/PokemonList';
 // PokemonList is responsible for fetching all the data and formatting it
