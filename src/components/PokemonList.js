@@ -7,14 +7,14 @@ const apiHost = process.env.NODE_ENV === 'development'
   : 'https://pokeapi.co';
 
 const limit = process.env.NODE_ENV === 'development'
-  ? '/?limit=251'
-  : '/';
+  ? '?limit=151'
+  : '?limit=802';
 
 export default class PokemonList extends React.Component { 
   state = {
     pokemon: null,
     currentPokemon: null,
-    url: `${apiHost}/api/v2/pokemon${limit}`,
+    url: `${apiHost}/api/v2/pokemon/${limit}`,
   };
 
   componentDidMount() {
@@ -55,7 +55,7 @@ export default class PokemonList extends React.Component {
                   key={currentPokemon}
                   {...currentPokemon}
                 />
-              : <h2>Loading Pokemon</h2>}
+              : this.setState({currentPokemon: 25})}
             </div>
           </Fragment>
         : <h2>Loading Pokedex</h2>}
