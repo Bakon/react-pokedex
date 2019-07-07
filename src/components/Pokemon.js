@@ -11,7 +11,7 @@ export default function({index, name, types, onClick}) {
       </div>
       <div className="pokemonCardBot">
         <div className="typing">
-          {types.map(({slot, type: {name}}) => (
+          {types.map(({type: {name}}) => (
             <span className={name} key={name} />
           ))}
         </div>

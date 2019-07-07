@@ -9,13 +9,15 @@ export default function({index, name, types}) {
         <h3>{name}</h3>
         <h3>#{index.padStart(3, '00')}</h3>
       </div>
-      <div className="typing">
-        {types.map(({slot, type: {name}}) => (
-          <span className={name} key={name} />
-        ))}
-      </div>
-      <div className="pokemonSprite">
-        <img src={image} alt={name +'sprite'} />
+      <div className="pokemonCardBot">
+        <div className="typing">
+          {types.map(({type: {name}}) => (
+            <span className={name} key={name} />
+          ))}
+        </div>
+        <div className="pokemonSprite">
+          <img src={image} alt={name +'sprite'} />
+        </div>
       </div>
     </div>
   );

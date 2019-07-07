@@ -4,6 +4,8 @@ import './styles/PokemonTyping.sass';
 
 import PokemonList from './components/PokemonList';
 // PokemonList is responsible for fetching all the data and formatting it
+// Todo: Add 420 blaze it then easter egg
+
 
 export default class Pokedex extends React.Component {
   render() {
