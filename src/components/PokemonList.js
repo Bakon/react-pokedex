@@ -75,6 +75,7 @@ export default class PokemonList extends React.Component {
 
   render() {
     const {pokemon: allPokemon, currentPokemon} = this.state;
+   
 
     return (
       <Fragment>
@@ -87,6 +88,7 @@ export default class PokemonList extends React.Component {
                     this.setState({ currentPokemon: pokemon });
                   }}
                   key={pokemon.name}
+                  isShiny={this.props.isShiny}
                   {...pokemon}
                 />
               ))}
@@ -95,6 +97,7 @@ export default class PokemonList extends React.Component {
               {currentPokemon ?
                 <PokemonHighlighter
                   key={currentPokemon}
+                  isShiny={this.props.isShiny}
                   {...currentPokemon}
                 />
               : this.setState({currentPokemon: 25})}

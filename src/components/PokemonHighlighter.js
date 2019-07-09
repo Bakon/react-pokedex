@@ -1,7 +1,9 @@
 import React from 'react';
 
-export default function({index, name, types, stats}) {
-  const image = `http://cursist38.reacollege.eu/sprites/${index}.png`;
+export default function({index, name, types, stats, isShiny}) {
+  const image = isShiny 
+    ? `http://cursist38.reacollege.eu/sprites/shiny/${index}.png`
+    : `http://cursist38.reacollege.eu/sprites/${index}.png`;
 
   return ( 
     <div className="pokemonCard">
