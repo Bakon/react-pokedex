@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function({index, name, types, stats}) {
-const image = `http://cursist38.reacollege.eu/sprites/${index}.png`;
+  const image = `http://cursist38.reacollege.eu/sprites/${index}.png`;
 
   return ( 
     <div className="pokemonCard">
@@ -27,7 +27,7 @@ const image = `http://cursist38.reacollege.eu/sprites/${index}.png`;
               <span>{stat.stat.name}</span>
               <div className="progress">
                 <div 
-                  style={{ width: stat.base_stat / 5 + 'rem'  }}
+                  style={{ width: stat.base_stat / 2 + '%'  }}
                   className={stat.stat.name + "value"}
                 >
                  <span>{stat.base_stat}</span>

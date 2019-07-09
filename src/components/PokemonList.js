@@ -67,13 +67,10 @@ export default class PokemonList extends React.Component {
       }
     });
     fetchData().then(pokemon => this.setState({ pokemon, currentPokemon: pokemon[24] }));
-    
 
-
-
-    window.addEventListener('resize', () => {
-      console.log(window.innerWidth)
-    });
+    // window.addEventListener('resize', () => {
+    //   console.log(window.innerWidth)
+    // });
   };
 
   render() {

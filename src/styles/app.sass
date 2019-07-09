@@ -59,6 +59,7 @@ h1, h2, h3, h4, p
   max-width: 100%
   margin-top: 1rem
   box-shadow: 0px 2px 5px 1px #0000002e
+  min-width: 10.6rem
   .pokemonCardTop
     padding: .25rem .5em
     display: flex
@@ -89,7 +90,7 @@ h1, h2, h3, h4, p
   flex-flow: column wrap
   border-radius: .3rem
   width: 50vw
-  height: 70vh
+  height: 100%
   max-width: 100%
   margin-top: 1rem
   box-shadow: 0px 2px 5px 1px #0000002e
@@ -101,6 +102,7 @@ h1, h2, h3, h4, p
       display: flex
       justify-content: center
       align-items: center
+      height: 100%
     & .pokemonSprite
       display: flex
       align-items: center
@@ -129,7 +131,6 @@ h1, h2, h3, h4, p
   & > div
     display: flex
     flex-flow: row nowrap
-    // justify-content: space-between
     color: black
     margin: .1rem 0
     max-width: 100%
@@ -146,7 +147,6 @@ h1, h2, h3, h4, p
     height: 100%
     border-radius: .3rem
     & span
-      // color: #e6dede
 
 .hpvalue
   background-color: #78c850
@@ -165,3 +165,8 @@ h1, h2, h3, h4, p
 
 .speedvalue
   background-color: #f85888
+
+@media only screen and (max-width: 350px) 
+  .header a:first-of-type 
+    display: none
+    
