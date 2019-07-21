@@ -1,4 +1,5 @@
-Pokedex made with React.
+# React Pokedex
+
 Highlights clicked Pokemon and displays stats on the right.
 
 ## Available Scripts
