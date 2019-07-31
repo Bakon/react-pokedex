@@ -21,7 +21,6 @@ export default class Pokedex extends React.Component {
         <header className="header">
           <a href="https://julicolo.github.io/react-pokedex">Pokedex</a>
           <button onClick={toggleShiny}>Toggle Shinies!</button>
-          <input type="text" placeholder="Search for a Pokemon!" />
         </header>
         <div className="main">
           <PokemonList 
