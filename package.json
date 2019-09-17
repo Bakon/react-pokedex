@@ -17,7 +17,7 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "develop": "run-p start runApi",
+    "dev": "run-p start runApi",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
