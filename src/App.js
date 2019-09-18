@@ -1,20 +1,22 @@
 import React from 'react';
-import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 
-import PokemonList from './components/PokemonList';
 import Pokemon from './components/Pokemon';
+import PokemonCard from './components/PokemonCard';
 
 import './styles/App.sass';
 import './styles/PokemonTyping.sass';
 
-const path = process.env.NODE_ENV === 'development' ? '/' : 'https://julicolo.github.io/';
+const path =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
+    : 'https://julicolo.github.io/react-pokedex';
 
 const apiHost =
   process.env.NODE_ENV === 'development' ? 'http://localhost:1337' : 'https://pokeapi.co';
 
 export default class Pokedex extends React.Component {
   state = {
-    url: `${apiHost}/api/v2/pokemon/?limit=25`,
+    url: `${apiHost}/api/v2/pokemon/?limit=50`,
     offset: 0,
     allPokemon: null,
     isShiny: false,
@@ -56,7 +58,7 @@ export default class Pokedex extends React.Component {
 
       if (height * 0.85 <= scrolled) {
         this.setState(state => {
-          const newOffset = state.offset + 25;
+          const newOffset = state.offset + 50;
 
           return {
             ...state,
@@ -77,29 +79,41 @@ export default class Pokedex extends React.Component {
   }
 
   render() {
+    const {allPokemon, currentPokemon, isShiny} = this.state;
+
     return (
-      <Router>
-        <div className="container">
-          <header className="header">
-            <a href="https://julicolo.github.io/react-pokedex">Pokedex</a>
-            <button onClick={() => this.setState({isShiny: !this.state.isShiny})}>
-              Toggle Shinies!
-            </button>
-          </header>
-          <div className="main">
-            <Switch>
-              <Route
-                exact
-                path={path}
-                render={() => (
-                  <PokemonList isShiny={this.state.isShiny} allPokemon={this.state.allPokemon} />
-                )}
-              />
-              <Route exact path={`${path}/pokemon/:name`} component={Pokemon} />
-            </Switch>
-          </div>
+      <div className="container">
+        <header className="header">
+          <a href={path}>Pokedex</a>
+          <button
+            onClick={() => {
+              this.setState({isShiny: !isShiny});
+            }}
+          >
+            Toggle Shinies!
+          </button>
+        </header>
+        <div className="main">
+          {currentPokemon ? (
+            <div className="highlighted" onClick={() => this.setState({currentPokemon: null})}>
+              <Pokemon isShiny={isShiny} pokemon={currentPokemon} />
+            </div>
+          ) : null}
+          {allPokemon ? (
+            allPokemon.map(pokemon => (
+              <div
+                className="pokemonCard"
+                key={pokemon.name}
+                onClick={() => this.setState({currentPokemon: pokemon})}
+              >
+                <PokemonCard isShiny={isShiny} {...pokemon} />
+              </div>
+            ))
+          ) : (
+            <h2>Loading Pokedex</h2>
+          )}
         </div>
-      </Router>
+      </div>
     );
   }
 }

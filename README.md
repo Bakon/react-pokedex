@@ -1,6 +1,14 @@
 # React Pokedex
 
-Highlights clicked Pokemon and displays stats on the right.
+A Pokedex made in React, if clicked on a window it will display information about that Pokemon.<br>
+Such as it's attack, defence, it's Pokedex entry, typing, male/female ratio and more.
+
+[React](https://reactjs.org/)<br>
+[Express](https://expressjs.com)
+[Webpack](https://webpack.js.org/)<br>
+[Babel](https://babeljs.io/)<br>
+[ESLint](https://eslint.org/)<br>
+[Prettier](https://prettier.io/)<br>
 
 ## Available Scripts
 
