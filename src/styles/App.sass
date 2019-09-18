@@ -19,7 +19,8 @@ h1, h2, h3, h4, p
   display: flex
   flex-flow: column wrap
   align-items: center
-  margin-top: 4rem
+  margin-top: 3rem
+  background: url('../background.png') repeat
 
 .header
   background-color: #de3136
@@ -57,25 +58,38 @@ h1, h2, h3, h4, p
   width: 100%
   justify-content: space-evenly
   font-family: Roboto
+  padding: 0 12.5%
 
 .pokemonCard
   display: flex
   flex-flow: row wrap
   justify-content: center
   border-radius: .3rem
-  width: 30vw
   max-width: 100%
-  margin-top: 1rem
+  margin: 2rem
   box-shadow: 0px 2px 5px 1px #0000002e
-  min-width: 10.6rem
+  min-width: 15rem
+  user-select: none
+  background-color: white
+  a
+    text-decoration: none
+    width: 100%
+    color: black
+    &:focus,
+    &:hover,
+    &:visited,
+    &:link,
+    &:active
+      text-decoration: none
   .pokemonCardTop
-    padding: .25rem .5em
     display: flex
     flex-flow: row wrap
+    align-items: center
     justify-content: space-between
     width: 100%
-    border-radius: .3rem
-    box-shadow: 0px 2px 5px 1px #eff4f5
+    height: 2.25rem
+    padding: 0 .75rem
+    border-radius: 0.3rem 0.3rem 0rem 0rem
     background-color: #ddd
     & h3::first-letter
       display: inline-block
@@ -83,9 +97,8 @@ h1, h2, h3, h4, p
   .pokemonCardBot
     display: flex
     flex-flow: column wrap
-    width: 100%
     justify-content: space-between
-    padding: .3rem
+    padding: .75rem
     .pokemonSprite
       display: flex
       justify-content: center
@@ -173,7 +186,3 @@ h1, h2, h3, h4, p
 
 .speedvalue
   background-color: #f85888
-
-@media only screen and (max-width: 350px) 
-  .header a:first-of-type 
-    display: none
