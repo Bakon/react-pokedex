@@ -35,12 +35,13 @@ h1, h2, h3, h4, p
   align-items: center
   z-index: 1000
   padding: 0 1.5rem
-  & a:first-of-type
+  & h3:first-of-type
     color: #f3e038
     text-decoration: none
     font-size: 1.5rem
     padding-left: .5rem
     font-family: 'Pokemon'
+    cursor: pointer
   & button
     background-color: #ffffff
     border-radius: .5rem
@@ -74,6 +75,7 @@ h1, h2, h3, h4, p
   min-width: 15rem
   user-select: none
   background-color: white
+  cursor: pointer
 
 .pokemonCardTop
   display: flex
@@ -102,12 +104,10 @@ h1, h2, h3, h4, p
 .highlighted
   position: fixed
   margin-top: 3rem
-  top: 0
+  top: 5rem
   display: flex
   flex-flow: column wrap
   border-radius: .3rem
-  height: 100%
-  width: 100%
   background-color: white
   box-shadow: 0px 2px 5px 1px #0000002e
   img
@@ -167,3 +167,7 @@ h1, h2, h3, h4, p
 
 .speedvalue
   background-color: #f85888
+
+@media (max-width: 350px)
+  .highlighted
+    top: 0

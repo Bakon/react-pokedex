@@ -17,11 +17,7 @@ export default function Pokemon({isShiny, ...props}) {
     evs,
     hatchSteps,
   } = props.pokemon;
-
-  const image = props.isShiny
-    ? `http://cursist38.reacollege.eu/sprites/shiny/${index}.png`
-    : `http://cursist38.reacollege.eu/sprites/${index}.png`;
-
+  
   return (
     <React.Fragment>
       <div className="pokemonCardTop">
@@ -35,7 +31,8 @@ export default function Pokemon({isShiny, ...props}) {
           ))}
         </div>
         <div className="pokemonSprite">
-          <img src={image} alt={name + 'sprite'} />
+          <img src={`http://cursist38.reacollege.eu/sprites/${index}.png`} alt={name + 'sprite'} />
+          <img src={`http://cursist38.reacollege.eu/sprites/shiny/${index}.png`} alt={name + 'sprite'} />
         </div>
         <div className="pokemonStats">
           {stats.map(stat => (

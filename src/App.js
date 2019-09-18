@@ -6,11 +6,6 @@ import PokemonCard from './components/PokemonCard';
 import './styles/App.sass';
 import './styles/PokemonTyping.sass';
 
-const path =
-  process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3000'
-    : 'https://julicolo.github.io/react-pokedex';
-
 const apiHost =
   process.env.NODE_ENV === 'development' ? 'http://localhost:1337' : 'https://pokeapi.co';
 
@@ -20,6 +15,7 @@ export default class Pokedex extends React.Component {
     offset: 0,
     allPokemon: null,
     isShiny: false,
+    highlightedPokemon: null,
   };
 
   componentDidMount() {
@@ -79,24 +75,23 @@ export default class Pokedex extends React.Component {
   }
 
   render() {
-    const {allPokemon, currentPokemon, isShiny} = this.state;
+    const {allPokemon, highlightedPokemon, isShiny} = this.state;
 
     return (
       <div className="container">
         <header className="header">
-          <a href={path}>Pokedex</a>
-          <button
-            onClick={() => {
-              this.setState({isShiny: !isShiny});
-            }}
-          >
-            Toggle Shinies!
-          </button>
+          <h3 onClick={() => this.setState({highlightedPokemon: null})}>Pokedex</h3>
+          <button onClick={() => this.setState({isShiny: !isShiny})}>Toggle Shinies!</button>
         </header>
-        <div className="main">
-          {currentPokemon ? (
-            <div className="highlighted" onClick={() => this.setState({currentPokemon: null})}>
-              <Pokemon isShiny={isShiny} pokemon={currentPokemon} />
+        <div
+          className="main"
+          onClick={event => {
+            if (highlightedPokemon !== null) this.setState({highlightedPokemon: null});
+          }}
+        >
+          {highlightedPokemon ? (
+            <div className="highlighted">
+              <Pokemon isShiny={isShiny} pokemon={highlightedPokemon} />
             </div>
           ) : null}
           {allPokemon ? (
@@ -104,7 +99,7 @@ export default class Pokedex extends React.Component {
               <div
                 className="pokemonCard"
                 key={pokemon.name}
-                onClick={() => this.setState({currentPokemon: pokemon})}
+                onClick={() => this.setState({highlightedPokemon: pokemon})}
               >
                 <PokemonCard isShiny={isShiny} {...pokemon} />
               </div>
