@@ -59,7 +59,7 @@ export default class Pokedex extends React.Component {
           return {
             ...state,
             offset: newOffset,
-            url: `${apiHost}/api/v2/pokemon/?limit=25&offset=${newOffset}`,
+            url: `${apiHost}/api/v2/pokemon/?limit=50&offset=${newOffset}`,
           };
         });
 
