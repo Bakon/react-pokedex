@@ -46,11 +46,7 @@
     "semi": true,
     "singleQuote": true,
     "bracketSpacing": false,
-    "editor.formatOnSave": true,
-    "configLocations": [
-      "${home_path}/.prettierrc",
-      "${folder}/.prettierrc"
-    ]
+    "editor.formatOnSave": true
   },
   "browserslist": {
     "production": [
