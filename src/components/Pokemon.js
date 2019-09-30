@@ -46,6 +46,10 @@ export default class Pokemon extends React.Component {
               alt={name + 'sprite'}
             />
           </div>
+          <div className="pokemonHeightWeight">
+            <span>{'Height: ' + height / 10 + ' Metre'}</span>
+            <span>{'Weight: ' + weight / 10 + ' Kilogram'}</span>
+          </div>
           <div className="pokemonEntry">
             <p>{pokedexEntry}</p>
           </div>
@@ -62,6 +66,15 @@ export default class Pokemon extends React.Component {
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+          <div className="pokemonAbilities">
+            {abilities.reverse().map(ability => (
+              <p key={ability.ability.name}>
+                {ability.is_hidden
+                  ? `Hidden ability: ${ability.ability.name}`
+                  : `Ability: ${ability.ability.name}`}
+              </p>
             ))}
           </div>
           <p>Click anywhere to close the screen!</p>
