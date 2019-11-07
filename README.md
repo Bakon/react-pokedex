@@ -4,11 +4,11 @@ A Pokedex made in React, if clicked on a window it will display information abou
 Such as it's attack, defence, it's Pokedex entry, typing, etc.
 
 [React](https://reactjs.org/)<br>
-[Express](https://expressjs.com)
+[Express](https://expressjs.com)<br>
 [Webpack](https://webpack.js.org/)<br>
 [Babel](https://babeljs.io/)<br>
 [ESLint](https://eslint.org/)<br>
-[Prettier](https://prettier.io/)<br>
+[Prettier](https://prettier.io/)
 
 ## Available Scripts
 
