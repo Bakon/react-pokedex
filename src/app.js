@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Pokemon from './components/Pokemon';
 import PokemonCard from './components/PokemonCard';
 
